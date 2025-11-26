@@ -1,15 +1,41 @@
 - model: shop.product
   pk: 1
   fields:
-    name: Стол
+    name: Стол письменный
     price: 2000
+    quantity: 8
+
 - model: shop.product
   pk: 2
   fields:
-    name: Стул
+    name: Стул офисный
     price: 1000
+    quantity: 25
+
 - model: shop.product
   pk: 3
   fields:
-    name: Табурет
+    name: Табурет кухонный
     price: 500
+    quantity: 0
+
+- model: shop.product
+  pk: 4
+  fields:
+    name: Шкаф двухстворчатый
+    price: 7500
+    quantity: 3
+
+- model: shop.product
+  pk: 5
+  fields:
+    name: Кровать односпальная
+    price: 12000
+    quantity: 5
+
+- model: shop.product
+  pk: 6
+  fields:
+    name: Диван угловой
+    price: 35000
+    quantity: 1

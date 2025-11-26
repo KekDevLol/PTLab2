@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
     <title>Товары</title>
 </head>
 <body>
-    <div>
-        <h3>Список</h3>
-        <table>
-            <tr>
-                <td><p>Наименование</p></td>
-                <td><p>Цена</p></td>
-                <td></td>
-            </tr>
-            {% for p in products %}
-                <tr>
-                    <td><p>{{ p.name }}</p></td>
-                    <td><p>{{ p.price }}</p></td>
-                    <td><p><a href="/buy/{{ p.id }}">Купить</a></p></td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
+    <h2>Товары в магазине</h2>
+    <table border="1">
+        <tr>
+            <th>Наименование</th>
+            <th>Цена</th>
+            <th>Остаток</th>
+            <th>Действие</th>
+        </tr>
+        {% for p in products %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.price }} ₽</td>
+            <td>{{ p.quantity }} шт.</td>
+            <td>
+                {% if p.quantity > 0 %}
+                    <a href="{% url 'buy' p.id %}">Купить</a>
+                {% else %}
+                    Нет в наличии
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
